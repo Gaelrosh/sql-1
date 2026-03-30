@@ -100,6 +100,18 @@ INSERT INTO sales (order_id, customer_id, product_id, quantity, sale_date) VALUE
 (104, 4, 203, 3, '2024-01-18'),
 (105, 5, 202, 10, '2024-01-20');
 
+-- Add New York customer
+INSERT INTO customers (customer_id, customer_name, city)
+VALUES (6, 'John Smith', 'New York');
+
+-- Add order for that customer
+INSERT INTO orders (order_id, order_date, customer_id, total_amount)
+VALUES (106, '2024-02-01', 6, 2500.00);
+
+-- Add related sales record
+INSERT INTO sales (order_id, customer_id, product_id, quantity, sale_date)
+VALUES (106, 6, 201, 1, '2024-02-01');
+
 SELECT * FROM employees;
 SELECT * FROM customers;
 SELECT * FROM orders;
